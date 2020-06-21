@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static' , filename = 'posts.js')}}"></script>
+    <title>HOW TO DOs</title>
+    <link rel="stylesheet" href="/static/post_style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>POSTS</h2>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            {% with messages = get_flashed_messages() %} {% if messages %}
+            <div id="message">
+                {{ messages[0] }}
+            </div>
+            {% endif %} {% endwith %}
+            <div class="card">
+                {% for x in data %}
+                <h2>{{ x.title }}</h2>
+                <h5>{{x.regdate}}</h5>
+                <div class="fakeimg" style="height:max-content; font-size: 24px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">
+                    {{ x.post }}
+                </div>
+                <div id="like">
+                    <p>Likes <span id="post{{ x.id }}" value="{{ x.id }}">{{ x.likes }}</span></p>
+                </div>
+                <button class="like_button" id="{{x.id}}" value="{{x.likes}}" onclick="like_it(this.id ); this.disabled = true;">LIKE</button><br><br> {% endfor %}
+            </div>
+        </div>
+        <div class="rightcolumn">
+
+            <div class="card">
+                <h1>Welcome</h1>
+                <div class="fakeimg" style="font-size: 34px; color: greenyellow;">{{ current_user.name }}</div>
+                <div class="fakeimg"><a href="{{url_for('account')}}">Account</a></div><br>
+                <div class="fakeimg"><a href="{{url_for('mypost')}}">Make a Post</a></div><br>
+                <div class="fakeimg"><a href="{{url_for('logout')}}">Logout</a></div>
+            </div>
+            <div class="card">
+                <div class="links">
+                    <h3>Follow Me</h3>
+                    <a href="https://www.facebook.com/manojkumarb.bagewadi">FACEBOOOK</a><br>
+                    <a href="https://www.instagram.com/assassino_4617/">INSTAGRAM</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>MANOJMUMAR</h2>
+    </div>
+
+</body>
+
+</html>

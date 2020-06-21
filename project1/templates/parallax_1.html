@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to do anything</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'style_1.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{url_for('static' , filename = 'parallax.min.js')}}"></script>
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <a href="{{url_for('signin')}}">SIGN IN</a>
+        <a href="{{url_for('signupget')}}">SIGN UP</a>
+    </nav>
+    <br>
+    <hr>
+    <div class="container">
+        <p class="middle-text">
+            Curious to know how some things happen.
+        </p>
+        <div class="parallax-window" data-parallax="scroll" data-z-index="1" data-image-src=" {{url_for('static' , filename = 'img/pro5.png')}} ">
+            <p class="info">
+                PASSION
+            </p>
+        </div>
+        <p class="middle-text">
+            ...HOW TO DO ANYTHING...
+        </p>
+        <div class="parallax-window" data-parallax="scroll" data-z-index="1" data-image-src="{{url_for('static' , filename = 'img/pro1.png')}}">
+            <p class="info">
+                LEARNING
+            </p>
+        </div>
+        <p class="middle-text">
+            Learn unexpected from others
+        </p>
+        <div class="parallax-window" data-parallax="scroll" data-z-index="1" data-image-src="{{url_for('static' , filename = 'img/pro2.png')}}">
+            <p class="info">
+                INNOVATE
+            </p>
+        </div>
+        <p class="middle-text">
+            Find answers for your QUESTIONS
+        </p>
+        <div class="parallax-window" data-parallax="scroll" data-z-index="1" data-image-src="{{url_for('static' , filename = 'img/pro3.png')}}">
+            <p class="info">
+                DREAM
+            </p>
+        </div>
+        <p class="middle-text">
+            JOIN TO LEARN
+        </p>
+        <div class="parallax-window" data-parallax="scroll" data-z-index="1" data-image-src="{{url_for('static' , filename = 'img/pro8.png')}}">
+            <p class="info">
+                ASK
+            </p>
+        </div>
+        <hr>
+        <footer>
+            <p class="text">
+                CREATED BY : MANOJKUMAR
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

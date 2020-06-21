@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<script>
+    var check = function() {
+
+        if (document.getElementById('pass').value == document.getElementById('conpass').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Matching';
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Not Matching';
+        }
+    }
+</script>
+
+
+<html>
+
+<head>
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="/static/signup.css">
+
+    <body>
+
+        <div class="loginbox">
+
+            <img src="{{url_for('static' , filename = 'ava3.jpg')}}" class="avatar">
+            <h1>Sign Up</h1>
+            <form action="{{url_for('signup')}}" method="post">
+                <p>Name</p>
+                <input type="text" name="name" id="name" placeholder="Enter Name">
+                <p>Username</p>
+                <input type="text" name="username" id="username" placeholder="Enter Username">
+                <p>Email</p>
+                <input type="email" name="email" id="email" placeholder="Enter Email">
+                <p>Password</p>
+                <input type="text" name="pass" id="pass" placeholder="Enter Password">
+                <p>Confirm Password</p>
+                <input type="password" name="conpass" id="conpass" placeholder="Confirm Password" onkeyup="check()"><span id="message"></span>
+                <input type="submit" name="" value="SIGNUP">
+
+                <a href="{{url_for('signin')}}">Have an account?</a>
+            </form>
+
+        </div>
+
+    </body>
+</head>
+
+</html>
+
+</html>

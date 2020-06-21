@@ -1,0 +1,155 @@
+ * {
+     box-sizing: border-box;
+ }
+ /* Add a gray background color with some padding */
+ 
+ body {
+     font-family: Arial;
+     padding: 20px;
+     background-image: url('/static/img/im12.png');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+ }
+ /* Header/Blog Title */
+ 
+ .header {
+     color: white;
+     padding: 20px;
+     font-size: 40px;
+     text-align: center;
+     background: transparent;
+ }
+ /* Create two unequal columns that floats next to each other */
+ /* Left column */
+ 
+ .leftcolumn {
+     float: left;
+     width: 75%;
+     border: none;
+     border-right: 2px solid white;
+ }
+ /* Right column */
+ 
+ .rightcolumn {
+     float: left;
+     width: 25%;
+     padding-left: 20px;
+ }
+ /* Fake image */
+ 
+ .fakeimg {
+     background-color: transparent;
+     width: 100%;
+     padding: 20px;
+     border: none;
+     border-top: 2px solid white;
+     border-bottom: 2px solid white;
+ }
+ 
+ .fakeimg a {
+     text-decoration: none;
+     font-size: 24px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     background: transparent;
+     color: azure;
+ }
+ 
+ .fakeimg a:hover {
+     color: coral;
+     font-weight: bold;
+ }
+ /* Add a card effect for articles */
+ 
+ .card {
+     color: white;
+     background-color: transparent;
+     padding: 20px;
+     margin-top: 20px;
+ }
+ /* Clear floats after the columns */
+ 
+ .card h2,h4 {
+     font-size: 30px;
+     color: chocolate;
+ }
+ 
+ .row:after {
+     content: "";
+     display: table;
+     clear: both;
+ }
+ /* Footer */
+ 
+ .footer {
+     padding: 20px;
+     text-align: center;
+     background: transparent;
+     margin-top: 20px;
+     color: white
+ }
+ 
+ .links a {
+     text-decoration: none;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     font-size: 22px;
+     color: aqua;
+ }
+ 
+ .links a:hover {
+     color: coral;
+     font-weight: bold;
+     transition-duration: 700ms;
+ }
+ 
+ button {
+     width: 10%;
+     font-size: 22px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     color: crimson;
+     background: transparent;
+     border: none;
+     margin-top: 10px;
+     border-left: 2px solid red;
+     border-right: 2px solid red;
+ }
+ 
+ button:hover {
+     color: coral;
+     font-weight: bold;
+     cursor: pointer;
+     transition-duration: 600ms;
+ }
+ 
+ button:disabled {
+     color: grey;
+     border-left: 2px solid grey;
+     border-right: 2px solid grey;
+     cursor: default;
+ }
+ /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+ 
+ @media screen and (max-width: 800px) {
+     .leftcolumn,
+     .rightcolumn {
+         width: 100%;
+         padding: 0;
+     }
+     button {
+         font-size: 12px;
+     }
+ }
+ 
+ #message {
+     font-size: 40px;
+     font-family: 'Times New Roman', Times, serif;
+     background-color: transparent;
+     color: red;
+     width: 35%;
+     margin-left: 50%;
+     position: relative;
+     top: 100px;
+     text-align: center;
+     border: 2px solid black;
+     padding: 20px;
+     border-radius: 3px;
+ }

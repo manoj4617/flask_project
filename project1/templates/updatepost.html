@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static' , filename = 'updatepost.js')}}"></script>
+    <title>YOUR POSTS</title>
+    <link rel="stylesheet" href="/static/mypost.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>YOUR POSTS</h2>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div id="message"></div>
+            <div class="card">
+                <div>
+                    <label id="ttlable" for="ttl">Title</label>
+                    <p id="ttl">{{data.title}}</p>
+                </div>
+                <div>
+                    <label id="bdylable" for="pobdy">Your previous post</label><br>
+                    <p id="pobdy">{{data.post}}</p>
+                </div>
+                <hr>
+                <div>
+                    <h3>New Title</h3><br>
+                    <input type="text" name="title" id="title" value="{{data.title}}">
+                </div>
+                <div>
+                    <h3>New Post</h3><br>
+                    <textarea name="bdy" id="bdy" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <button id="submit" onclick="updatethispost({{data.id}})">UPDATE</button>
+                    <div id="back">
+                        <a href="{{url_for('account')}}">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+
+            <div class="card">
+                <h1>Welcome</h1>
+                <div class="fakeimg" style="font-size: 34px; color: greenyellow;">{{ current_user.name }}</div>
+                <div class="fakeimg"><a href="{{url_for('account')}}">Account</a></div>
+                <div class="fakeimg"><a href="{{url_for('logout')}}">Logout</a></div>
+            </div>
+            <div class="card">
+                <div class="links">
+                    <h3>Follow Me</h3>
+                    <a href="https://www.facebook.com/manojkumarb.bagewadi">FACEBOOOK</a><br>
+                    <a href="https://www.instagram.com/assassino_4617/">INSTAGRAM</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>MANOJMUMAR</h2>
+    </div>
+
+</body>
+
+</html>

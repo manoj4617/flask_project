@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ current_user.name}} | ACCOUNT</title>
+    <link rel="stylesheet" href="../static/account.css">
+    <script src="../static/account.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="left">
+            <div id="message">
+
+            </div>
+            <div class="card">
+                <p>Your details</p>
+                <h3>If you wish to change your details</h3>
+
+
+                <div>
+                    <label for="name">NAME</label><br>
+                    <input type="text" id="name" value="{{current_user.name}}">
+                </div>
+                <div>
+                    <label for="username">USERNAME</label><br>
+                    <input type="text" id="username" value="{{current_user.username}}">
+                </div>
+                <div>
+                    <label for="email">EMAIL</label><br>
+                    <input type="email" id="email" value="{{current_user.email}}">
+                </div>
+                <div>
+                    <label for="pass">PASSWORD</label><br>
+                    <input type="password" id="pass" value="{{current_user.password}}">
+                </div>
+                <div>
+                    <input type="checkbox" onclick="show()"><span>Show Password</span>
+                </div>
+                <div>
+                    <button type="button" onclick="update()">UPDATE</button>
+                </div>
+
+                <h4 id="mess"></h4>
+
+                <div>
+                    <a href="{{url_for('like')}}">BACK</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="card">
+                <div id="post">
+                    <h2>Your posts</h2>
+                    <hr>
+                    <div>
+                        {% if not posts %}
+                        <p>You have not made any posts yet</p>
+                        {%else%} {% for data in posts %}
+                        <h2>{{data.title}}</h2>
+                        <button id="del" onclick="deleteit({{data.id}} , {{current_user.id}})">Delete</button>
+                        <a href="{{url_for('updatepost' , postid = data.id)}}"><span id="update">Update</span></a> {%if data.likes%}
+                        <button id="likebut" onclick="like({{data.id}}); this.disabled = true;">LIKES</button><span>{{ data.likes }}</span>
+                        <div id="liked{{data.id}}">
+                            {%endif%}
+                        </div>
+                        <h2 id="mes{{data.id}}"></h2>
+                        {% endfor %}
+                        <hr> {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

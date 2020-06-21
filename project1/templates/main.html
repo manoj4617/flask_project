@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        #frm {
+            position: relative;
+            top: 200px;
+            left: 250px;
+            margin: 30px;
+            text-align: justify;
+            width: 40%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="frm">
+            <form action="{{ url_for('post') }}" method="POST">
+                <label for="post">Tell us here</label><br>
+                <input type="text" id="post" name="post" placeholder="POST HERE"><br><br>
+
+                <input type="submit" value="Submit"><br>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

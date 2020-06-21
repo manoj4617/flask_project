@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static' , filename = 'mypost.js')}}"></script>
+    <title>YOUR POSTS</title>
+    <link rel="stylesheet" href="/static/mypost.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>YOUR POSTS</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="leftcolumn">
+            <div id="message"></div>
+            <div class="card">
+                <div>
+                    <label for="title">TITLE</label>
+                </div>
+                <div>
+                    <input type="text" id="title" name="title" placeholder="PLACE YOUR TITLE HERE">
+                </div>
+                <div>
+                    <textarea name="postBody" id="postBody" cols="30" rows="10" placeholder="Type your post here"></textarea>
+                </div>
+                <div>
+                    <button id="submit" onclick="thispost()">POST</button>
+                    <div id="back">
+                        <a href="{{url_for('like')}}">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightcolumn">
+
+            <div class="card">
+                <h1>Welcome</h1>
+                <div class="fakeimg" style="font-size: 34px; color: greenyellow;">{{ current_user.name }}</div>
+                <div class="fakeimg"><a href="{{url_for('account')}}">Account</a></div>
+                <div class="fakeimg"><a href="{{url_for('logout')}}">Logout</a></div>
+            </div>
+            <div class="card">
+                <div class="links">
+                    <h3>Follow Me</h3>
+                    <a href="https://www.facebook.com/manojkumarb.bagewadi">FACEBOOOK</a><br>
+                    <a href="https://www.instagram.com/assassino_4617/">INSTAGRAM</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>MANOJMUMAR</h2>
+    </div>
+
+</body>
+
+</html>
