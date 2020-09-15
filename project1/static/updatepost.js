@@ -17,7 +17,7 @@ function updatethispost(pid) {
         })
         .then(function(response) {
             if (response.status !== 200) {
-                console.log("Something wen badly wrong")
+                console.log("Something went badly wrong")
                 return;
             }
             response.json().then(function(data) {
